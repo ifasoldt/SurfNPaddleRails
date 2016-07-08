@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'posts#one_post'
+  root 'posts#show'
 
   # Example of regular route:
     get 'blog/about' => 'about#index', as: :about

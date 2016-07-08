@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body >
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-10 col-xs-offset-1">
-          <div class="row">
+          <div class="row header-banner<%= @post.id.to_i %>">
             <div class="col-md-4 col-xs-12 header-font header-link-color"><%= image_tag "Cow", id: "logo" %>TURF & CATTLE CO. BLOG</div>
             <div class="col-md-1 col-xs-12 col-md-offset-5 header-font"><%= link_to "ABOUT", about_path, class: "header-link-color" %></div>
             <div class="col-md-2 col-xs-12 header-font"><a href="http://www.turfandcattle.com/search" class="header-link-color">SEARCH <i class="glyphicon glyphicon-search"></i></a></div>

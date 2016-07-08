@@ -2,6 +2,38 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  background: image-url("cute_cow_banner")no-repeat;
-  background-size: 100vw;
+
+ }
+
+ .header-banner0 {
+   background: image-url("cute_cow_banner")no-repeat;
+   background-size: cover;
+ }
+
+ .header-banner1 {
+ background: image-url("bison")no-repeat;
+ background-size:cover;
+ }
+
+
+ .header-banner2 {
+ background: image-url("longhorn")no-repeat;
+ background-size:cover;
+}
+
+
+ .header-banner3 {
+ background: image-url("water_buffalo")no-repeat;
+ background-size: cover;
+ }
+
+
+ .header-banner4 {
+ background: image-url("yak")no-repeat;
+ background-size: cover;
+ }
+
+ .header-banner5 {
+ background: image-url("zebu")no-repeat;
+ background-size: cover;
  }

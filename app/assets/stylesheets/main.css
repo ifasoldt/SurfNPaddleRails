@@ -1,6 +1,6 @@
-body {
-  background-size: 100vw;
- }
+* {
+  border: red 1px solid;
+}
 
  .couriernew {
    font-family: Courier New;
