@@ -1,0 +1,8 @@
+<div class="row">
+  <h1 class=" xs-small-margin font-kern link-visited"><span style="color:#591D0A"><%= link_to @post.title, post_path(@post.id) %> </span></h1>
+</div>
+<div class="row">
+  <div class="hidden-xs hidden-sm col-md-4 bahia couriernew"><%= image_tag @post.author_picture, class: "img-responsive img-extra-rounded" %> <%= @post.author %> </div>
+  <div class="hidden-xs hidden-sm col-md-5 lightgrey couriernew" id="date">on <a href="http://www.turfandcattle.com/date-this" class="social-media"> <%= @post.created_at %></a></div>
+</div>
+<%= simple_format(@post.body, class: "row pad-right almostbigrow") %>

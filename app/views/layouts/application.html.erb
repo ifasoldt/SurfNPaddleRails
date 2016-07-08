@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Turf and Cattle</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <meta name="description" content="Your one stop for all things turf and cattle.">
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+          <div class="row">
+            <div class="col-md-4 col-xs-12 header-font header-link-color"><%= image_tag "Cow", id: "logo" %>TURF & CATTLE CO. BLOG</div>
+            <div class="col-md-1 col-xs-12 col-md-offset-5 header-font"><a href="http://www.turfandcattle.com/ABOUT" class="header-link-color">ABOUT</div>
+            <div class="col-md-2 col-xs-12 header-font"><a href="http://www.turfandcattle.com/search" class="header-link-color">SEARCH <i class="glyphicon glyphicon-search"></i></a></div>
+          </div>
+          <div class="row biggerrow">
+            <div class="col-xs-7 col-xs-offset-5 title-font">TURF AND CATTLE CO.</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-xs-offset-6 subscript-font">An Iron Yard Academy Project Est. Summer 2016</div>
+          </div>
+          <div class="row bigrow">
+            <div class="col-md-8">
+              <%= yield %>
+            <div class="row">
+              <button type="button" class="col-xs-3 btn btn-info btn-sm btn-success"><a href="http://www.google.com" class="button-color"><span class="glyphicon glyphicon-comment"></span> Read Comments</a></button>
+              <button type="button" class="col-xs-3 col-xs-offset-1 btn btn-info btn-sm btn-danger"><a href="http://www.google.com" class="button-color"><span class="glyphicon glyphicon-fire"></span>Burn</a></button>
+              <button type="button" class="col-xs-3 col-xs-offset-1 btn btn-info btn-sm btn-success"><a href="http://www.google.com" class="button-color"><span class="glyphicon glyphicon-envelope"></span>Send</a></button>
+            </div>
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="some-pad-top col-md-4 col-md-offset-4 col-sm-2 col-sm-offset-5 col-xs-4 col-xs-offset-4">
+                  <%= image_tag "HeadShot",  class:"img-responsive img-rounded img-center" %>
+                </div>
+              </div>
+              <div class="row text-center bahia couriernew ">
+                  <h4 class="margin-bot">Isaiah Edward</h4>
+              </div>
+              <div class="row xs-left">
+                  <div class="col-xs-12 text-center"><a href="https://twitter.com/IsaiahFasoldt" class="social-media">Twitter |</a> <a href="https://www.facebook.com/isaiah.fasoldt" class="social-media">Facebook |</a> <a href="https://www.instagram.com/ifasoldt/?hl=en" class="social-media">Instagram</a></div>
+              </div>
+              <div id="add" class="row lightgrey"> <%= image_tag "cow_bubble", class: "img-responsive bigrow" %><a href="http://www.google.com">About This Ad</a></div>
+              <div class="xs-no-side-padding row padding-sides">
+                <h4 class="bahia">Cow or Pig?</h4>
+                <p class="lightgrey">Bacon ipsum dolor amet pig dolore meatloaf, short loin consectetur rump ullamco. Doner officia nostrud boudin fatback, ut laborum ullamco quis beef. Capicola tempor spare ribs, esse pariatur aliqua pork loin id qui proident et.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row bigrow top-border top-pad text-center">
+        <h1 class="bahia">Other Grass-Fed Content</h1>
+      </div>
+      <div class="row bigrow">
+        <% @posts.each do |post| %>
+        <div class="col-md-3 no-side-padding tint-green">
+        <%= link_to image_tag(post.post_picture, class: "uniform-height img-responsive"), post_path(post.id) %>
+        <h2 class="relative-up"><%= post.title %></h2>
+        </div>
+        <% end %>
+      </div>
+      <footer class="row background-redwood">
+        <%= image_tag "TIY-logo.png", class:"col-md-1 col-md-offset-1 col-sm-3 col-sm-offset-2 col-xs-6 col-xs-offset-3" %>
+        <div class="row hidden-md">
+          <div class="col-md-3 text-white" id="copyright">"The Ironyard Copyright 2016, All Rights Reserved"</div>
+          <div class="col-md-5 col-md-offset-2">
+            <ul class="row">
+              <li class="col-md-1 col-md-offset-1 no-side-padding"><a href="http://www.turfandcattle.com/help" class="link-white">Help</a></li>
+                <li class="col-md-1 hidden-sm hidden-xs text-center  no-side-padding">|</li>
+              <li class="col-md-2 no-side-padding"><a href="http://www.turfandcattle.com/contactus" class="link-white"> Contact Us</a></li>
+              <li class="col-md-1 hidden-sm hidden-xs text-center no-side-padding">|</li>
+              <li class="col-md-2 no-side-padding"><a href="http://www.turfandcattle.com/terms" class="link-white">Terms of Use</a></li>
+              <li class="col-md-1 hidden-sm hidden-xs text-center no-side-padding">|</li>
+              <li class="col-md-2 no-side-padding"><a href="http://www.turfandcattle.com/policies" class="link-white">Policies</a></li>
+            </ul>
+        </div>
+      </div>
+      </footer>
+    </div>
+  </body>
+</html>
