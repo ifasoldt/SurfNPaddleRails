@@ -1,5 +1,5 @@
-* {
-  border: red 1px solid;
+.search-field {
+  width:100%
 }
 
  .couriernew {
@@ -24,10 +24,6 @@
 
 .header-link-color {
   color:#5D220A;
-}
-
-#search {
-  width:17px
 }
 
 .biggerrow {
@@ -300,4 +296,13 @@ li {
 
 .link-visited :visited {
   color: #A2D410;
+}
+
+.button-padding-left {
+  padding-left: 0px
+}
+
+.button-rounded {
+  border-radius: 5px;
+  height:28px
 }

@@ -11,26 +11,36 @@
   <body >
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xs-10 col-xs-offset-1">
+        <div class="col-xs-12">
           <div class="row header-banner<%= @post.id.to_i %>">
-            <div class="col-md-4 col-xs-12 header-font header-link-color"><%= image_tag "Cow", id: "logo" %>TURF & CATTLE CO. BLOG</div>
-            <div class="col-md-1 col-xs-12 col-md-offset-5 header-font"><%= link_to "ABOUT", about_path, class: "header-link-color" %></div>
-            <div class="col-md-2 col-xs-12 header-font"><a href="http://www.turfandcattle.com/search" class="header-link-color">SEARCH <i class="glyphicon glyphicon-search"></i></a></div>
+            <div class="col-xs-10 col-xs-offset-1">
+              <div class="row">
+                <div class="col-md-4 col-xs-12 header-font header-link-color"><%= image_tag "Cow", id: "logo" %>TURF & CATTLE CO. BLOG</div>
+                <div class="col-md-1 col-xs-12 col-md-offset-4 header-font"><%= link_to "ABOUT", about_path, class: "header-link-color" %></div>
+                <div class="col-md-3 col-xs-12 header-font">
+                  <form class="row" action="/search" method="get">
+                    <div  class="col-md-9">
+                      <input class="search-field" type="text" name="search_term"/>
+                    </div>
+                    <div class="col-md-3 button button-padding-left">
+                      <button class="button-rounded btn-secondary" type="submit">Search</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="row biggerrow">
+                <div class="col-xs-7 col-xs-offset-5 title-font">TURF AND CATTLE CO.</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-6 col-xs-offset-6 subscript-font">An Iron Yard Academy Project Est. Summer 2016</div>
+              </div>
+            </div>
           </div>
-          <div class="row biggerrow">
-            <div class="col-xs-7 col-xs-offset-5 title-font">TURF AND CATTLE CO.</div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6 col-xs-offset-6 subscript-font">An Iron Yard Academy Project Est. Summer 2016</div>
-          </div>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1">
           <div class="row bigrow">
             <div class="col-md-8">
               <%= yield %>
-            <div class="row">
-              <button type="button" class="col-xs-3 btn btn-info btn-sm btn-success"><a href="http://www.google.com" class="button-color"><span class="glyphicon glyphicon-comment"></span> Read Comments</a></button>
-              <button type="button" class="col-xs-3 col-xs-offset-1 btn btn-info btn-sm btn-danger"><a href="http://www.google.com" class="button-color"><span class="glyphicon glyphicon-fire"></span>Burn</a></button>
-              <button type="button" class="col-xs-3 col-xs-offset-1 btn btn-info btn-sm btn-success"><a href="http://www.google.com" class="button-color"><span class="glyphicon glyphicon-envelope"></span>Send</a></button>
-            </div>
             </div>
             <div class="col-md-4">
               <div class="row">
@@ -44,10 +54,10 @@
               <div class="row xs-left">
                   <div class="col-xs-12 text-center"><a href="https://twitter.com/IsaiahFasoldt" class="social-media">Twitter |</a> <a href="https://www.facebook.com/isaiah.fasoldt" class="social-media">Facebook |</a> <a href="https://www.instagram.com/ifasoldt/?hl=en" class="social-media">Instagram</a></div>
               </div>
-              <div id="add" class="row lightgrey"> <%= image_tag "cow_bubble", class: "img-responsive bigrow" %><a href="http://www.google.com">About This Ad</a></div>
+              <div id="add" class="row lightgrey"> <%= image_tag @ad.ad_picture, class: "img-responsive bigrow" %><a href="http://www.google.com">About This Ad</a></div>
               <div class="xs-no-side-padding row padding-sides">
-                <h4 class="bahia">Cow or Pig?</h4>
-                <p class="lightgrey">Bacon ipsum dolor amet pig dolore meatloaf, short loin consectetur rump ullamco. Doner officia nostrud boudin fatback, ut laborum ullamco quis beef. Capicola tempor spare ribs, esse pariatur aliqua pork loin id qui proident et.</p>
+                <h4 class="bahia"><%= @ad.ad_title %></h4>
+                <p class="lightgrey"><%= @ad.ad_body %></p>
               </div>
             </div>
           </div>

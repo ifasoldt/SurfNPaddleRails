@@ -1,39 +1,42 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-
- }
 
  .header-banner0 {
    background: image-url("cute_cow_banner")no-repeat;
-   background-size: cover;
+   background-size:cover;
+   background-position: center
  }
 
  .header-banner1 {
  background: image-url("bison")no-repeat;
  background-size:cover;
+ background-position: center
  }
 
 
  .header-banner2 {
  background: image-url("longhorn")no-repeat;
  background-size:cover;
+ background-position: center
 }
 
 
  .header-banner3 {
  background: image-url("water_buffalo")no-repeat;
  background-size: cover;
+ background-position: center;
  }
 
 
  .header-banner4 {
  background: image-url("yak")no-repeat;
- background-size: cover;
+ background-size: 100vw, cover;
+ background-position: center;
  }
 
  .header-banner5 {
  background: image-url("zebu")no-repeat;
  background-size: cover;
+ background-position: center;
  }
