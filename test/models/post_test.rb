@@ -43,13 +43,16 @@ class PostTest < ActiveSupport::TestCase
   end
 
   test "body length minimum 100 char" do
-    post = Post.new(body: "afsdf")
-    assert_equal ["dfs"], post.errors.messages[:body]
+    post = Post.new(title: "Isaiah", body: "laborum.", post_picture: "gaga")
+    refute post.valid?
+    assert post.errors.messages[:body].include? "is too short (minimum is 100 characters)"
   end
 
   test "title length max 100 char" do
-    post = Post.new(title: "asdfas df asdf asd f sdf asd fa sdf asd fa dsfjkasdkfankdsf asd faknsdfnansdfaskf sdk fa dsf s dfnadsfnaksdfkkakls  as df asd f asdf asd fa sdf asd fadsf")
-    assert_equal ["dfs"], post.errors.messages[:title]
+    post = Post.new(title: "asdf d sdlfjk a;osdihf;oaisdjfio a'jsdf;adfasdfm asdfasdfasdfasdfasdfasdfasdfasdfasdfsdf sd sdfasdfas asdf asd fa sdfa sd  fd f asdf as dfa  s sa", body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", post_picture: "gaga")
+    refute post.valid?
+    puts post.errors.messages
+    assert post.errors.messages[:title].include? "is too long (maximum is 100 characters)"
   end
 
 
