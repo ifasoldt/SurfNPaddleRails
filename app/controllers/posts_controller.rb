@@ -2,23 +2,15 @@ class PostsController < ApplicationController
 
   def show
     @ad = Ad.all.sample
-    if params[:id]
-      @post = Post.find(params[:id].to_i)
-    else
-      @post = Post.all.sort_by{|post| post.created_at}.first
-    end
-    @posts = Post.all.sort_by{|post| post.created_at} - [@post]
+    @post = Post.set_post(params[:id])
+    @posts = Post.order_posts(params[:id])
   end
 
   def search
     @posts = Post.all.sort_by{|post| post.created_at} - [Post.all.last]
     @post = Post.all.sort_by{|post| post.created_at}.first
     @ad = Ad.all.sample
-    @searched_posts = Post.all.select do |post|
-      (post.title.include?(params[:search_term])) ||
-      (post.body.include?(params[:search_term])) ||
-      (post.author.include?(params[:search_term]))
-    end
+    @searched_posts = Post.searched_posts(params[:search_term])
     if @searched_posts[0]
       @search_message = "Here are the posts that match your search terms:"
     else
