@@ -1,0 +1,11 @@
+<div class="row bigrow top-border top-pad text-center">
+  <h1 class="bahia">Other Grass-Fed Content</h1>
+</div>
+<div class="row bigrow">
+  <% posts.each do |post| %>
+  <div class="col-md-3 no-side-padding tint-green">
+  <%= link_to image_tag(post.post_picture, class: "uniform-height img-responsive"), post_path(post.id) %>
+  <h2 class="relative-up"><%= post.title %></h2>
+  </div>
+  <% end %>
+</div>

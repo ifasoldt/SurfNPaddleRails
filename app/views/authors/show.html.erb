@@ -1,0 +1,17 @@
+<h2 class="row text-center"> NEW Author Created: <%= @author.name %></h2>
+<div class="row">
+  <div class="hidden-xs hidden-sm col-md-12 bahia couriernew"><%= image_tag @author.picture, class: "img-responsive" %></div>
+  <div class="hidden-xs hidden-sm col-md-5 lightgrey couriernew" id="date">on <a href="http://www.turfandcattle.com/date-this" class="social-media"> <%= @author.created_at %></a></div>
+</div>
+
+<div class="row">
+  <%= link_to new_author_path, class: "col-xs-3 btn btn-info btn-sm btn-success" do %>
+    <span class="glyphicon glyphicon-user-add"></span> Add Another Author
+  <% end %>
+  <%= link_to edit_author_path(@author.id), class: "col-xs-3 col-xs-offset-1 btn btn-info btn-sm btn-success" do %>
+    <span class="glyphicon glyphicon-wrench"></span> Edit Author Info
+  <% end %>
+  <%= link_to author_path(@author.id), method: :delete, data: {confirm: "Really?"}, class: "col-xs-3 col-xs-offset-1 btn btn-danger btn-sm btn-success" do %>
+    <span class="glyphicon glyphicon-user-remove"></span> Remove Author
+  <% end %>
+</div>

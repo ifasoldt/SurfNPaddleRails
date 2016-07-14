@@ -1,0 +1,33 @@
+<% if @post_errors %>
+  <% @post_errors.each do |key, value| %>
+    <p><%= "Error: #{key.to_s.capitalize} #{value.join(" and ")}." %></p>
+  <% end %>
+<% end %>
+
+<%= form_for post  do |f| %>
+  <p>
+    <%= f.label :title %>
+  </p>
+  <p>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :author_id %>
+  </p>
+  <p>
+    <%= f.collection_select("author_id", Author.all, :id, :name, include_blank: true) %>
+  </p>
+  <p>
+    <%= f.label :post_picture %>
+  </p>
+  <p>
+    <%= f.text_field :post_picture %>
+  </p>
+  <p>
+    <%= f.label :body %>
+  </p>
+  <p>
+    <%= f.text_area :body %>
+  </p>
+  <%= f.submit %>
+<% end %>
