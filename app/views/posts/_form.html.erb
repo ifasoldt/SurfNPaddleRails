@@ -4,7 +4,7 @@
   <% end %>
 <% end %>
 
-<%= form_for post  do |f| %>
+<%= form_for post, html: {class: "form-horizontal text-field"}  do |f| %>
   <p>
     <%= f.label :title %>
   </p>
@@ -29,5 +29,6 @@
   <p>
     <%= f.text_area :body %>
   </p>
+  <
   <%= f.submit %>
 <% end %>
